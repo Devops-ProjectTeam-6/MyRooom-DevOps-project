@@ -2,21 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Build auth-server') {
             steps {
-                echo 'Building auth-server'
-                sh 'auth-server/./gradlew clean build --no-daemon'
+                dir("auth-server") {
+                    sh './gradlew clean build'
+                }
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+
+        // stage('Build App 2') {
+        //     steps {
+        //         dir("app2") {
+        //             sh 'docker build -t app-builder .'
+        //         }
+        //     }
+        // }
+
+        // Add more stages for testing, deployment, etc.
     }
 }
