@@ -1,1 +1,2 @@
-# MyRooom-DevOps-project
+# MyRooom-DevOps-project (Team6)
+# jenkins build configured
