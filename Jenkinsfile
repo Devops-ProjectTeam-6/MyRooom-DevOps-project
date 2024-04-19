@@ -4,9 +4,10 @@ pipeline {
     stages {
         stage('Build auth-server') {
             steps {
-                dir("auth-server") {
-                    sh './gradlew clean build'
-                }
+                dir('frontend/myroom-admin client') {
+                    sh 'npm install'
+                    cleanWs()
+                }  
             }
         }
 
